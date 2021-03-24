@@ -1,12 +1,9 @@
 package com.emanuel.market.persistence.entity;
 
-import jdk.jfr.Category;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "productos")
-
 public class Producto {
 
     @Id
@@ -30,10 +27,18 @@ public class Producto {
 
     private Boolean estado;
 
+
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
     public Integer getIdProducto() {
         return idProducto;
@@ -90,6 +95,4 @@ public class Producto {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
-
-
 }

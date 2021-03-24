@@ -40,13 +40,13 @@ public class ProductoRepository implements ProductRepository {
 
     @Override
     public Optional<Product> getProduct(int productId) {
-        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduc(producto));
+        return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
     }
 
     @Override
     public Product save(Product product) {
         Producto producto = mapper.toProducto(product);
-        return mapper.toProduc(productoCrudRepository.save(producto));
+        return mapper.toProduct(productoCrudRepository.save(producto));
     }
 
     @Override
