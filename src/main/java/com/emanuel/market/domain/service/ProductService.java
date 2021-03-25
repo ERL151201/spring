@@ -1,5 +1,6 @@
 package com.emanuel.market.domain.service;
 
+
 import com.emanuel.market.domain.Product;
 import com.emanuel.market.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,11 @@ public class ProductService {
     public List<Product> getAll(){
         return productRepository.getAll();
     }
+
     public Optional<Product> getProduct(int productId){
         return productRepository.getProduct(productId);
     }
+
     public Optional<List<Product>> getByCategory(int categoryId){
         return productRepository.getByCategory(categoryId);
     }
@@ -27,7 +30,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public boolean delete(int productId) {
+    public boolean delete(int productId){
         return getProduct(productId).map(product -> {
             productRepository.delete(productId);
             return true;

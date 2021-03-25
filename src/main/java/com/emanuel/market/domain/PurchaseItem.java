@@ -38,4 +38,3 @@ public class PurchaseItem {
         this.active = active;
     }
 }
-

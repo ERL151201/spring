@@ -1,17 +1,20 @@
 package com.emanuel.market.persistence.entity;
 
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "compras_productos")
 public class ComprasProducto {
+
     @EmbeddedId
     private ComprasProductoPK id;
 
     private Integer cantidad;
+
     private Double total;
+
     private Boolean estado;
+
 
     @ManyToOne
     @MapsId("idCompra")
@@ -21,6 +24,11 @@ public class ComprasProducto {
     @ManyToOne
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
     private Producto producto;
+
+
+
+    // get and set
+
     public ComprasProductoPK getId() {
         return id;
     }
@@ -53,12 +61,11 @@ public class ComprasProducto {
         this.estado = estado;
     }
 
-    public Compra getCompra() {
-        return compra;
+    public void setCompra(Compra compra) {
     }
 
-    public void setCompra(Compra compra) {
-        this.compra = compra;
+    public Compra getCompra() {
+        return compra;
     }
 
     public Producto getProducto() {

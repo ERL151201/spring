@@ -1,5 +1,6 @@
 package com.emanuel.market.persistence.mapper;
 
+
 import com.emanuel.market.domain.Product;
 import com.emanuel.market.persistence.entity.Producto;
 import org.mapstruct.InheritInverseConfiguration;
@@ -19,8 +20,8 @@ public interface ProductMapper {
             @Mapping(source = "cantidadStock", target = "stock"),
             @Mapping(source = "estado", target = "active"),
             @Mapping(source = "categoria", target = "category"),
-
     })
+
     Product toProduct(Producto producto);
     List<Product> toProducts(List<Producto> productos);
 

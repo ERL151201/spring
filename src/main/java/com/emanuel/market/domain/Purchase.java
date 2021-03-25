@@ -3,7 +3,7 @@ package com.emanuel.market.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Purchase   {
+public class Purchase {
     private int purchaseId;
     private String clientId;
     private LocalDateTime date;
@@ -11,7 +11,6 @@ public class Purchase   {
     private String comment;
     private String state;
     private List<PurchaseItem> items;
-
 
     public int getPurchaseId() {
         return purchaseId;

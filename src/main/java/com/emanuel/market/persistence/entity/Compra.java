@@ -6,8 +6,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "compras")
-
 public class Compra {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compra")
@@ -22,15 +22,18 @@ public class Compra {
     private String medioPago;
 
     private String comentario;
+
     private String estado;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "producto", cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProducto> productos;
 
+
+    //get and set
 
     public Integer getIdCompra() {
         return idCompra;
